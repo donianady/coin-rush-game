@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dkoyyefqp54yq"]
+
+[ext_resource type="Texture2D" uid="uid://cmv8cg3n5vx1o" path="res://Soul_Cage.png" id="1_nqvvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vusi"]
+atlas = ExtResource("1_nqvvu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xivkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vusi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31if1"]
+size = Vector2(62, 98)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=477321531]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1451393933]
+position = Vector2(42.499992, 63.5)
+scale = Vector2(2.3281248, 2.2031248)
+sprite_frames = SubResource("SpriteFrames_xivkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439790541]
+position = Vector2(44, 74)
+shape = SubResource("RectangleShape2D_31if1")
