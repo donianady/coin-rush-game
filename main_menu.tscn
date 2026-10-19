@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dnl7nbebwffmo"]
+
+[ext_resource type="Texture2D" uid="uid://bwr0c2anfvr0m" path="res://Day/Back.png" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://d3o6ak8ylnik5" path="res://Minecraft.ttf" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://23v0wgvjanbw" path="res://Day/Clouds.png" id="2_glbon"]
+[ext_resource type="Script" uid="uid://bat10mgunhkr1" path="res://playbutton.gd" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://dhlykbta1qofl" path="res://clouds.gd" id="3_qe12f"]
+[ext_resource type="Script" uid="uid://dh60jovkwyjat" path="res://clouds_2.gd" id="4_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://dnmv7ieqksw8s" path="res://Day/Middle.png" id="5_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://dxmvb7tg5nvg0" path="res://Day/props/dome-2.png" id="6_nlkkf"]
+
+[node name="MainMenu" type="Control" unique_id=1476587778]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=505021232]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -227.0
+offset_right = 346.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7vrkn")
+
+[node name="Clouds" type="Sprite2D" parent="." unique_id=1141802120]
+position = Vector2(16.999992, 99.00001)
+scale = Vector2(1.6394533, 1.2427084)
+texture = ExtResource("2_glbon")
+script = ExtResource("3_qe12f")
+
+[node name="Clouds2" type="Sprite2D" parent="." unique_id=541568844]
+position = Vector2(-493.99997, 110.999985)
+scale = Vector2(1.3999999, 1.1875001)
+texture = ExtResource("2_glbon")
+script = ExtResource("4_8qtwp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1631381418]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -95.0
+offset_right = 240.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1333746866]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_fu7sn")
+theme_override_font_sizes/font_size = 29
+text = "Pixel Pier Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Playbutton" type="Button" parent="VBoxContainer" unique_id=1491820036]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Play
+"
+script = ExtResource("3_fu7sn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=449661368]
+position = Vector2(22, 20)
+offset = Vector2(-1.29, 0)
+zoom = Vector2(1.875, 1.875)
+
+[node name="Middle" type="Sprite2D" parent="." unique_id=1551414397]
+position = Vector2(-13.999998, 192)
+scale = Vector2(4.9375, 1)
+texture = ExtResource("5_nlkkf")
+
+[node name="Dome2" type="Sprite2D" parent="." unique_id=1903498617]
+position = Vector2(-226, 158)
+texture = ExtResource("6_nlkkf")
+
+[node name="Dome3" type="Sprite2D" parent="." unique_id=997747002]
+position = Vector2(278, 154)
+texture = ExtResource("6_nlkkf")
+
+[connection signal="pressed" from="VBoxContainer/Playbutton" to="VBoxContainer/Playbutton" method="_on_pressed"]
