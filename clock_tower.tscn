@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ck81g15f3ruqc"]
+
+[ext_resource type="Texture2D" uid="uid://rxrpdgfixvha" path="res://Texture/clock_tower.png" id="1_sim4x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6bo5"]
+atlas = ExtResource("1_sim4x")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xivkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6bo5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31if1"]
+size = Vector2(157, 106)
+
+[node name="clock tower" type="CharacterBody2D" unique_id=113184469]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=535363122]
+position = Vector2(123.50001, 35.500015)
+scale = Vector2(2.7265625, 2.3203125)
+sprite_frames = SubResource("SpriteFrames_xivkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=90180622]
+position = Vector2(122.5, 75)
+shape = SubResource("RectangleShape2D_31if1")

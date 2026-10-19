@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dxm8q8mwfp21k"]
+
+[ext_resource type="Script" uid="uid://bsuf8rmudlejh" path="res://lamb.gd" id="1_hidjo"]
+[ext_resource type="Texture2D" uid="uid://drugd3i2hj1ck" path="res://Ship/street_light 32x32.png" id="1_n32g7"]
+[ext_resource type="Script" uid="uid://dlmmkvbjnhfm7" path="res://point_light_2d.gd" id="3_ncdxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xivkm"]
+size = Vector2(8, 53)
+
+[sub_resource type="Gradient" id="Gradient_o81j3"]
+offsets = PackedFloat32Array(0, 0.9688889)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_221ks"]
+gradient = SubResource("Gradient_o81j3")
+fill = 1
+fill_from = Vector2(0.5, 0.45299146)
+fill_to = Vector2(0.8632479, 0.15384616)
+
+[node name="brightness" type="StaticBody2D" unique_id=1706278784]
+script = ExtResource("1_hidjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=990257319]
+position = Vector2(-1.0000229, 1.0000005)
+scale = Vector2(2.78125, 2.84375)
+texture = ExtResource("1_n32g7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1581181823]
+position = Vector2(-3, 18)
+shape = SubResource("RectangleShape2D_xivkm")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=481297834]
+position = Vector2(-5.0000005, -6.999999)
+scale = Vector2(0.96875006, 0.75)
+texture = SubResource("GradientTexture2D_221ks")
+script = ExtResource("3_ncdxb")
