@@ -111,7 +111,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":9794332,"index.wasm":37902138},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":9758832,"index.wasm":37902138},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -215,6 +215,23 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
+
+		<script>
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const checkWinCondition = setInterval(() => {
+    
+      const bodyText = document.body.innerText;
+      
+      if (bodyText.includes("COINS: 18") || bodyText.includes("COINS: 19") || bodyText.includes("COINS: 20") || bodyText.includes("COINS: 21")) {
+        console.log("You Won!");
+
+        alert("Congratulations! You won the game!");
+        clearInterval(checkWinCondition);
+      }
+    }, 500); 
+  });
+</script>
 	</body>
 </html>
 
